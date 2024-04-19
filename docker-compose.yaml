@@ -1,0 +1,16 @@
+# Configuración de docker
+version: '3'
+services: 
+  db:
+    image: mongo:5
+    restart: always
+    ports:
+      # Puerto de Docker : Puerto de Mi Computadora
+      - 27017:27017
+    environment:
+      MONGODB_DATABASE: nest-pokemon
+    # Para que los datos persistan 
+    volumes:
+      # Carpeta para almacenar la informacion : Carpeta de docker donde se almacena la informacion
+      - ./mongo:/data/db
+    
